@@ -7,6 +7,9 @@ ARG NB_UID
 
 
 RUN pip install jupyter-shiny-proxy
+RUN R -e 'install.packages("learnr")'
+RUN R -e 'remotes::install_github("rstudio-education/gradethis")'
+RUN R -e 'install.packages("palmerpenguins")'
 
 ## Copies your repo files into the Docker Container
 USER root
