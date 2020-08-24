@@ -5,6 +5,9 @@ FROM rocker/binder:latest
 ARG NB_USER
 ARG NB_UID
 
+
+RUN pip install jupyter-shiny-proxy
+
 ## Copies your repo files into the Docker Container
 USER root
 COPY . ${HOME}
